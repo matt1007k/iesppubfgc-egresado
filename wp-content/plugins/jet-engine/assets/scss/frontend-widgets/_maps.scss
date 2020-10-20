@@ -1,0 +1,61 @@
+.jet-map-box {
+	.jet-map-close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		cursor: pointer;
+		z-index: 9999;
+	}
+}
+
+.jet-map-marker {
+	font-size: 40px;
+	cursor: pointer;
+}
+
+.jet-map-box {
+	.popup-has-pin & {
+		&:after {
+			content: '';
+			position: absolute;
+			top: 100%;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			left: 50%;
+			margin: 0 0 0 -10px;
+			border-width: 10px 10px 0 10px;
+			border-color: #fff transparent transparent transparent;
+		}
+	}
+}
+
+.jet-map-marker-wrap {
+	padding: 5px;
+	position: relative;
+	margin: 0 0 10px;
+	background: #fff;
+	z-index: 999;
+	cursor: pointer;
+	text-align: center;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		left: 50%;
+		margin: 0 0 0 -10px;
+		border-width: 10px 10px 0 10px;
+		border-color: #fff transparent transparent transparent;
+	}
+}
+
+.jet-map-listing {
+	.gm-svpc {
+		img {
+			max-width: none;
+		}
+	}
+}
