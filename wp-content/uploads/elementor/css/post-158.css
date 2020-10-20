@@ -1,0 +1,17 @@
+.elementor-158 .elementor-element.elementor-element-575ecea{margin-top:50px;margin-bottom:50px;}.elementor-158 .elementor-element.elementor-element-09a5a22 .elementor-heading-title{color:#000000;font-family:"Roboto", Sans-serif;font-size:48px;font-weight:700;}.elementor-158 .elementor-element.elementor-element-167c6f0 .elementor-text-editor{columns:2;column-gap:50px;text-align:left;}.elementor-158 .elementor-element.elementor-element-167c6f0{color:var( --e-global-color-text );font-family:"Roboto", Sans-serif;font-size:15px;font-weight:400;}.elementor-158 .elementor-element.elementor-element-3b99fc0{width:370px;max-width:370px;}@media(min-width:768px){.elementor-158 .elementor-element.elementor-element-6229c15{width:50%;}.elementor-158 .elementor-element.elementor-element-7d3f67d{width:50%;}}/* Start custom CSS for shortcode, class: .elementor-element-3b99fc0 */.searchandfilter {
+    background: #7BDBFC;
+    padding: 10px 30px;
+}
+.searchandfilter ul {
+    margin: 0 !important;
+}
+.searchandfilter label {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.sf-input-text {
+    width: 100% !important;
+    background: #c2c2c2;
+}/* End custom CSS */

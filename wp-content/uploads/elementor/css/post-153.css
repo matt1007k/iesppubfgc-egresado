@@ -1,0 +1,24 @@
+.elementor-153 .elementor-element.elementor-element-c1d94fc{margin-top:60px;margin-bottom:40px;}.elementor-bc-flex-widget .elementor-153 .elementor-element.elementor-element-451213f.elementor-column .elementor-column-wrap{align-items:center;}.elementor-153 .elementor-element.elementor-element-451213f.elementor-column.elementor-element[data-element_type="column"] > .elementor-column-wrap.elementor-element-populated > .elementor-widget-wrap{align-content:center;align-items:center;}.elementor-153 .elementor-element.elementor-element-451213f.elementor-column > .elementor-column-wrap > .elementor-widget-wrap{justify-content:center;}.elementor-153 .elementor-element.elementor-element-c3c9717{width:100%;max-width:100%;}.elementor-153 .elementor-element.elementor-element-ac487a2{margin-top:0px;margin-bottom:30px;}.elementor-153 .elementor-element.elementor-element-853fd9b .elementor-heading-title{color:#363636;}.elementor-153 .elementor-element.elementor-element-f97de23{margin-top:0px;margin-bottom:80px;}.elementor-153 .elementor-element.elementor-element-50d992b{--grid-column-gap:30px;--grid-row-gap:35px;}.elementor-153 .elementor-element.elementor-element-50d992b .elementor-pagination{text-align:center;}body:not(.rtl) .elementor-153 .elementor-element.elementor-element-50d992b .elementor-pagination .page-numbers:not(:first-child){margin-left:calc( 10px/2 );}body:not(.rtl) .elementor-153 .elementor-element.elementor-element-50d992b .elementor-pagination .page-numbers:not(:last-child){margin-right:calc( 10px/2 );}body.rtl .elementor-153 .elementor-element.elementor-element-50d992b .elementor-pagination .page-numbers:not(:first-child){margin-right:calc( 10px/2 );}body.rtl .elementor-153 .elementor-element.elementor-element-50d992b .elementor-pagination .page-numbers:not(:last-child){margin-left:calc( 10px/2 );}@media(min-width:768px){.elementor-153 .elementor-element.elementor-element-ab0e739{width:24.059%;}.elementor-153 .elementor-element.elementor-element-451213f{width:52.376%;}.elementor-153 .elementor-element.elementor-element-4a46773{width:23.229%;}.elementor-153 .elementor-element.elementor-element-6a376e0{width:4.851%;}.elementor-153 .elementor-element.elementor-element-8627c49{width:94.814%;}}/* Start custom CSS for shortcode, class: .elementor-element-c3c9717 */.searchandfilter {
+    background: #7BDBFC;
+    padding: 10px 30px;
+}
+.searchandfilter ul {
+    margin: 0 !important;
+}
+.searchandfilter label {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.sf-input-text {
+    width: 100% !important;
+    background: #c2c2c2;
+}/* End custom CSS */
+/* Start custom CSS for column, class: .elementor-element-6a376e0 */#separator{
+    width: 5px;
+    height: auto;
+    background: #00B5F3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}/* End custom CSS */

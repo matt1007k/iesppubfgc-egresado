@@ -26,16 +26,18 @@ define( 'DB_NAME', 'iesppubfgc-egresado' );
 define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'root' );
+define( 'DB_PASSWORD', 'Administrador1.' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '161.35.96.143' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+
+define( 'FS_METHOD', 'direct' );
 
 /**#@+
  * Authentication Unique Keys and Salts.
