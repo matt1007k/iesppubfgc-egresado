@@ -1300,6 +1300,12 @@ return array(
 		),
 	),
 	array(
+		'Commissioner' => array(
+			'variants' => array( '100', '200', '300', 'regular', '500', '600', '700', '800', '900' ), 
+			'category' => 'sans-serif', 
+		),
+	),
+	array(
 		'Concert One' => array(
 			'variants' => array( 'regular' ), 
 			'category' => 'display', 
@@ -1457,7 +1463,7 @@ return array(
 	),
 	array(
 		'Cuprum' => array(
-			'variants' => array( 'regular', 'italic', '700', '700italic' ), 
+			'variants' => array( 'regular', '500', '600', '700', 'italic', '500italic', '600italic', '700italic' ), 
 			'category' => 'sans-serif', 
 		),
 	),
@@ -1625,7 +1631,7 @@ return array(
 	),
 	array(
 		'Domine' => array(
-			'variants' => array( 'regular', '700' ), 
+			'variants' => array( 'regular', '500', '600', '700' ), 
 			'category' => 'serif', 
 		),
 	),
@@ -4396,6 +4402,12 @@ return array(
 		),
 	),
 	array(
+		'Piazzolla' => array(
+			'variants' => array( '100', '200', '300', 'regular', '500', '600', '700', '800', '900', '100italic', '200italic', '300italic', 'italic', '500italic', '600italic', '700italic', '800italic', '900italic' ), 
+			'category' => 'serif', 
+		),
+	),
+	array(
 		'Piedra' => array(
 			'variants' => array( 'regular' ), 
 			'category' => 'display', 
@@ -4745,7 +4757,7 @@ return array(
 	),
 	array(
 		'Red Rose' => array(
-			'variants' => array( '300', 'regular', '700' ), 
+			'variants' => array( '300', 'regular', '500', '600', '700' ), 
 			'category' => 'display', 
 		),
 	),
@@ -5023,6 +5035,12 @@ return array(
 		'Sansita' => array(
 			'variants' => array( 'regular', 'italic', '700', '700italic', '800', '800italic', '900', '900italic' ), 
 			'category' => 'sans-serif', 
+		),
+	),
+	array(
+		'Sansita Swashed' => array(
+			'variants' => array( '300', 'regular', '500', '600', '700', '800', '900' ), 
+			'category' => 'display', 
 		),
 	),
 	array(

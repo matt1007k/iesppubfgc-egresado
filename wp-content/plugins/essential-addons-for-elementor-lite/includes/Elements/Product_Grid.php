@@ -95,8 +95,8 @@ class Product_Grid extends Widget_Base {
     {
         if ($this->is_show_custom_add_to_cart) {
             global $product;
-            $product_type = $product->product_type;
-            switch ($product_type) {
+            
+            switch ($product->get_type()) {
                 case 'external':
                     return $this->external_add_to_cart_button_text;
                     break;
@@ -127,7 +127,7 @@ class Product_Grid extends Widget_Base {
             ]
         );
 
-        if (!apply_filters('eael/active_plugins', 'woocommerce/woocommerce.php')) {
+        if (!apply_filters('eael/is_plugin_active', 'woocommerce/woocommerce.php')) {
             $this->add_control(
                 'ea_product_grid_woo_required',
                 [
@@ -238,6 +238,16 @@ class Product_Grid extends Widget_Base {
                 'label_block' => true,
                 'multiple'    => true,
                 'options'     => Helper::get_terms_list('product_cat', 'slug'),
+            ]
+        );
+
+        $this->add_control(
+            'eael_dynamic_template_Layout',
+            [
+                'label'   => esc_html__('Layout', 'essential-addons-for-elementor-lite'),
+                'type'    => Controls_Manager::SELECT,
+                'default' => 'default',
+                'options' => $this->get_template_list_for_dropdown(),
             ]
         );
 
@@ -871,7 +881,7 @@ class Product_Grid extends Widget_Base {
     {
         $settings = $this->get_settings_for_display();
 
-        if (!apply_filters('eael/active_plugins', 'woocommerce/woocommerce.php')) {
+        if (!apply_filters('eael/is_plugin_active', 'woocommerce/woocommerce.php')) {
             return;
         }
 
@@ -903,6 +913,15 @@ class Product_Grid extends Widget_Base {
             ];
         }
 
+        $args['meta_query'] = ['relation' => 'AND'];
+
+        if (get_option('woocommerce_hide_out_of_stock_items') == 'yes') {
+            $args['meta_query'][] = [
+                'key' => '_stock_status',
+                'value' => 'instock'
+            ];
+        }
+
         if ($settings['eael_product_grid_product_filter'] == 'featured-products') {
             $args['tax_query'] = [
                 'relation' => 'AND',
@@ -925,7 +944,7 @@ class Product_Grid extends Widget_Base {
             $args['orderby'] = 'meta_value_num';
             $args['order'] = 'DESC';
         } else if ($settings['eael_product_grid_product_filter'] == 'sale-products') {
-            $args['meta_query'] = [
+            $args['meta_query'][] = [
                 'relation' => 'OR',
                 [
                     'key'     => '_sale_price',
@@ -964,26 +983,30 @@ class Product_Grid extends Widget_Base {
         echo '<div class="woocommerce">';
 
         echo '<ul class="products">';
-        
-            $query = new \WP_Query($args);
 
-            if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
+            $template = $this->get_template( $settings[ 'eael_dynamic_template_Layout' ] );
+            if ( file_exists( $template ) ) {
+                $query = new \WP_Query( $args );
+                if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) {
+                        $query->the_post();
+                        include( $template );
+                    }
 
-                    include($this->get_template('default'));
+                } else {
+                    _e( '<p class="no-posts-found">No posts found!</p>', 'essential-addons-for-elementor-lite' );
                 }
+                wp_reset_postdata();
             } else {
-                _e('<p class="no-posts-found">No posts found!</p>', 'essential-addons-for-elementor-lite');
+                _e( '<p class="no-posts-found">No layout found!</p>', 'essential-addons-for-elementor-lite' );
             }
-            wp_reset_postdata();
 
         echo '</ul>';
 
         if ( 'true' == $settings['show_load_more'] ) {
             if ( $args['posts_per_page'] != '-1' ) {
                 echo '<div class="eael-load-more-button-wrap">
-                    <button class="eael-load-more-button" id="eael-load-more-btn-' . $this->get_id() . '" data-template='.json_encode([ 'dir'   => 'free', 'file_name' => 'default', 'name' => $this->process_directory_name() ], 1).' data-widget="' . $this->get_id() . '" data-class="' . get_class( $this ) . '" data-args="' . http_build_query( $args ) . '" data-settings="' . http_build_query( $settings ) . '" data-layout="masonry" data-page="1">
+                    <button class="eael-load-more-button" id="eael-load-more-btn-' . $this->get_id() . '" data-template='.json_encode([ 'dir'   => 'free', 'file_name' => $settings['eael_dynamic_template_Layout'], 'name' => $this->process_directory_name() ], 1).' data-widget="' . $this->get_id() . '" data-class="' . get_class( $this ) . '" data-args="' . http_build_query( $args ) . '" data-settings="' . http_build_query( $settings ) . '" data-layout="masonry" data-page="1">
                         <div class="eael-btn-loader button__loader"></div>
                         <span>' . esc_html__($settings['show_load_more_text'], 'essential-addons-for-elementor-lite') . '</span>
                     </button>

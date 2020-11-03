@@ -496,8 +496,9 @@ if ( ! class_exists( 'Astra_Header_Layout_Configs' ) ) {
 					'type'      => 'control',
 					'control'   => 'text',
 					'partial'   => array(
-						'selector'            => '.ast-mobile-menu-buttons',
+						'selector'            => '.ast-button-wrap',
 						'container_inclusive' => false,
+						'render_callback'     => array( 'Astra_Customizer_Partials', 'mobile_toggle_menu' ),
 					),
 				),
 
